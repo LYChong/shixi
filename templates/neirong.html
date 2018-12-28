@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title %}实习报告{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/neirong.css')}}">
+{% endblock %}
+
+{% block main %}
+<div class="box2">
+    <ul>
+        {% for question in questions %}
+            <li>
+            <div class="touxiang-group">
+                <img src="{{ url_for('static',filename='images/touxiang.jpeg')}}" alt="" class="touxiang">
+            </div>
+
+            <div class="neirong-group">
+                <p class="neirong-title"><a href="#">{{ question.title}}</a></p>
+                <p class="neirong-content">{{ question.content}}</p>
+                <div class="neirong-info">
+                    <span class="neirong-author">{{ question.author.username}}</span>
+                    <span class="neirong-time">2018-8</span>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+
+
+    </ul>
+</div>
+{% endblock %}

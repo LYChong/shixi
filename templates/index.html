@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-校外实习网站 </title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index2.css')}}">
+    <script src="{{url_for('static',filename='js/index.js')}}"></script>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="{{url_for('static',filename='images/logo.jpg')}}" alt="">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{url_for('index')}}">首页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="{{ url_for('baogao') }}">实习报告</a></li>
+                <li><a href="{{ url_for('neirong') }}">实习内容</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" action="{{ url_for('serach')}}" method="get">
+                <div class="form-group">
+                    <input name="q" type="text" class="form-control" placeholder="关键字搜索报告">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user %}
+                <li><a href="#">{{ user.username}}</a></li>
+                <li><a href="{{ url_for('zhuxiao') }}">退出登录</a></li>
+                {% else %}
+                <li><a href="{{url_for('login')}}">登录</a></li>
+                <li><a href="{{url_for('zhuce')}}">注册</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+<div class="main">
+
+    <div id="body">
+    </div>
+    <div id="foot"></div>
+    <div id="body1"><b>校外实践</b></div>
+    <div id="body2"><b>chuz.com &nbsp;一次实践，涨薪30%</b></div>
+    <div id="daohang">
+        <ul>
+            <li><a href="#">IT互联网</a> </li>
+            <li><a href="#">金融</a> </li>
+            <li><a href="#">地信</a> </li>
+            <li><a href="#">幼师</a> </li>
+            <li><a href="#">音乐</a> </li>
+            <li><a href="#">英语</a> </li>
+        </ul>
+    </div>
+    <div class="dhua"></div>
+    <div id="wenben">
+        <div>
+            <table id="ww">
+                <tr>
+                    <td><img src="{{url_for('static',filename='images/下载.jpg')}}" width="140px"
+                             height="70px" alt=""></td>
+                    <td><img src="{{url_for('static',filename='images/1.jpg')}}" width="140px"
+                             height="70px" ></td>
+                    <td><img src="{{url_for('static',filename='images/2.jpg')}}" width="140px"
+                             height="70px"></td>
+                    <td><img src="{{url_for('static',filename='images/3.jpg')}}" width="140px"
+                             height="70px"></td>
+                </tr>
+                <tr>
+                    <td><img src="{{url_for('static',filename='images/4.jpg')}}" width="140px"
+                             height="70px"></td>
+                    <td><img src="{{url_for('static',filename='images/u=1842019615,447861899&fm=27&gp=0.jpg')}}" width="140px"
+                             height="70px"></td>
+                    <td><img src="{{url_for('static',filename='images/u=21840669,374259380&fm=27&gp=0.jpg')}}" width="140px"
+                             height="70px"></td>
+                    <td><img src="{{url_for('static',filename='images/u=3587592704,4274650010&fm=27&gp=0.jpg')}}" width="140px"
+                             height="70px"></td>
+                </tr>
+            </table>
+            <table id="tab">
+                <tr style="height: 45px;">
+                    <td>百度</td>
+                    <td>资深研发工程师</td>
+                    <td>20-30万</td>
+                    <td>更多实践>></td>
+                </tr>
+                <tr style="height: 45px;">
+                    <td>阿里巴巴</td>
+                    <td>PHP高级研发工程师</td>
+                    <td>15-25万</td>
+                    <td>更多实践>></td>
+                </tr>
+                <tr style="height: 45px;">
+                    <td>新浪</td>
+                    <td>数据开发工程师</td>
+                    <td>20-30万</td>
+                    <td>更多实践>></td>
+                </tr>
+                <tr style="height: 45px;">
+                    <td>聚美优品</td>
+                    <td>网页设计</td>
+                    <td>10-15万</td>
+                    <td>更多实践>></td>
+                </tr>
+                <tr style="height: 45px;">
+                    <td>腾讯</td>
+                    <td>网络构架</td>
+                    <td>20-30万</td>
+                    <td>更多实践>></td>
+                </tr>
+                <tr style="height: 45px;">
+                    <td>爱奇艺</td>
+                    <td>后台搭建</td>
+                    <td>20-30万</td>
+                    <td>更多实践>></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

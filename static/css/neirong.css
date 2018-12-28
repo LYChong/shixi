@@ -1,0 +1,44 @@
+
+.box2 ul{
+    list-style: none;
+    padding-left: 0px;
+}
+
+.box2 li{
+    border-bottom: 2px solid #eee;
+    overflow: hidden;
+    padding:15px 0;
+}
+
+.touxiang-group{
+    width: 45px;
+    height: 100%;
+    float: left;
+}
+
+.touxiang-group .touxiang{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-top: 9px;
+}
+
+
+.neirong-group{
+    float: left;
+    width: 660px;
+    margin-left: 12px;
+}
+
+.neirong-title a{
+    color: #259;
+    font-weight: 900;
+}
+
+.neirong-info{
+    text-align: right;
+}
+
+.neirong-info .neirong-author{
+    margin-right: 20px;
+}
